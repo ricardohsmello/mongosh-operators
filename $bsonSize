@@ -1,0 +1,16 @@
+//Return the size of each documents.
+
+db.products.aggregate([
+    {
+       $match: { type: 'fixed-income'}
+    }
+    {
+      "$project": {
+        "name": 1,
+        "object_size": { $bsonSize: "$$ROOT" }
+      }
+    },
+    {
+      "$sort": { "object_size": -1 }
+    }
+])
