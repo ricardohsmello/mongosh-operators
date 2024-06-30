@@ -28,3 +28,142 @@ db.articles.aggregate([
         }
     }
 ])
+
+
+
+//Result:
+[
+  {
+    "_id": {
+      "$oid": "667e28e032e28185754c0c0b"
+    },
+    "title": "Article Ricas",
+    "author": "Ricardo",
+    "date": {
+      "$date": "2023-09-15T00:00:00Z"
+    },
+    "published": true,
+    "tags": [
+      "Java",
+      "Kotlin",
+      "MongoDB"
+    ],
+    "comments from users": [
+      {
+        "_id": {
+          "$oid": "667e2cecd59aef7fc7ca6504"
+        },
+        "user": 1,
+        "comments": "Very good content",
+        "article_id": {
+          "$oid": "667e28e032e28185754c0c0b"
+        }
+      },
+      {
+        "_id": {
+          "$oid": "667e2cecd59aef7fc7ca6505"
+        },
+        "user": 2,
+        "comments": "I love Ricardo's article",
+        "article_id": {
+          "$oid": "667e28e032e28185754c0c0b"
+        }
+      },
+      {
+        "_id": {
+          "$oid": "667e2cecd59aef7fc7ca6506"
+        },
+        "user": 3,
+        "comments": "Amazing",
+        "article_id": {
+          "$oid": "667e28e032e28185754c0c0b"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "667e28e032e28185754c0c0c"
+    },
+    "title": "Joao Article",
+    "author": "Joao",
+    "date": {
+      "$date": "2023-09-15T00:00:00Z"
+    },
+    "published": true,
+    "tags": [
+      "GO",
+      "PostgreSQL"
+    ],
+    "comments from users": [
+      {
+        "_id": {
+          "$oid": "667e2cecd59aef7fc7ca6508"
+        },
+        "user": 4,
+        "comments": "Awesome, Joao! Love it.",
+        "article_id": {
+          "$oid": "667e28e032e28185754c0c0c"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "667e28e032e28185754c0c0d"
+    },
+    "title": "Julia Article",
+    "author": "Julia",
+    "date": {
+      "$date": "2023-01-12T00:00:00Z"
+    },
+    "published": false,
+    "tags": [
+      "MongoDB"
+    ],
+    "comments from users": []
+  },
+  {
+    "_id": {
+      "$oid": "667e28e032e28185754c0c0e"
+    },
+    "title": "Marta Article",
+    "author": "Marta",
+    "date": {
+      "$date": "2024-03-25T00:00:00Z"
+    },
+    "published": true,
+    "tags": [
+      "MongoDB",
+      "AI"
+    ],
+    "comments from users": [
+      {
+        "_id": {
+          "$oid": "667e2cecd59aef7fc7ca6507"
+        },
+        "user": 1,
+        "comments": "I like the idea behind AI",
+        "article_id": {
+          "$oid": "667e28e032e28185754c0c0e"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "667e28e032e28185754c0c0f"
+    },
+    "title": "Joana Article",
+    "author": "Joana",
+    "date": {
+      "$date": "2021-04-10T00:00:00Z"
+    },
+    "published": true,
+    "tags": [
+      "MongoDB",
+      "Spring"
+    ],
+    "comments from users": []
+  }
+]
