@@ -1,0 +1,13 @@
+// Updating articles collection where title equals Kotlin and set it to active false
+
+db.articles.updateOne({ title: "Kotlin" }, { $set: { active: false } })
+
+// Return
+
+{
+  "acknowledged": true,
+  "insertedId": null,
+  "matchedCount": 1,
+  "modifiedCount": 1,
+  "upsertedCount": 0
+}
