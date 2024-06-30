@@ -1,4 +1,4 @@
-// The $out creates a copy of the collection
+// The $out creates a copy of the collection. This stage must be the last stage in the pipeline
 
 //This case, we going to create a new orders collection into a new_database database.
 
