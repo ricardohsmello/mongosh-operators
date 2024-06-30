@@ -1,0 +1,29 @@
+// Command
+
+db.articles.deleteOne(
+    { _id: ObjectId('6681b9ff8cf75856a29a2bd0') }
+)
+
+/*
+
+Result
+
+{
+  "acknowledged": true,
+  "deletedCount": 1
+}
+
+*/
+
+
+// This operation will delete the first document and return the number (1) that was deleted.
+
+db.articles.deleteOne({}).deletedCount
+
+
+// Collation - In this case, MongoDB will find the world
+
+db.restaurants.deleteOne(
+   { category: "cafe", status: "A" },
+   { collation: { locale: "fr", strength: 1 } }
+)
