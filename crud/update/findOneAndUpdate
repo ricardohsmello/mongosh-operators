@@ -1,0 +1,12 @@
+db.articles.findOneAndUpdate(
+    { _id: ObjectId('6681b9ff8cf75856a29a2bd0') },
+    {
+        $set: {
+            fieldOne: "just it 5"
+        }
+    },
+    {
+        upsert: true, // if query doesn't match, will insert
+        new: false       // return the old document without changes
+    }
+)
