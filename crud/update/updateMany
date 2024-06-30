@@ -1,6 +1,11 @@
-// Updating all articles seting active equal false
+// setting area equals DevRel for all articles where active is false.
+// If it doesn't match, it will create with upsert
 
-db.articles.updateMany({}, { $set: { active: false } })
+db.articles.updateMany(
+    { active: false},
+    { $set: { area: "DevRel" } },
+    { upsert: true }
+)
 
 /*
 
