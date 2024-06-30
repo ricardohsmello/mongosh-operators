@@ -1,0 +1,28 @@
+// Replace the objectId in the filter with the title body kt2. Insert if filter doesn't match (upsert = true)
+
+db.articles.replaceOne(
+    { _id: ObjectId('6681b9ff8cf75856a29a2bd5') },
+    {
+        title: "Kt2",
+        author: {
+            name: "Ricardo Mello",
+            position: "Developer Advocate"
+        },
+        area: "Developer Relations"
+    },
+    { upsert: true }
+)
+
+
+/*
+Result
+
+{
+  "acknowledged": true,
+  "insertedId": null,
+  "matchedCount": 1,
+  "modifiedCount": 1,
+  "upsertedCount": 0
+}
+
+*/
