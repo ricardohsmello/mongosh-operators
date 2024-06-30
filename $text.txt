@@ -1,0 +1,38 @@
+// Consider the following scenario:
+
+ db.movies.insertMany([
+    {name: "Titanic", year: 2000, plot: "A ship that siks at night"},
+    {name: "Piratas", year: 2010, plot: "Pirates steel ships"},
+    {name: "War", year: 1976, plot: "War in Vietna"},
+    {name: "Stargate", year: 2000, plot: "Space spaceship travels"}
+ ])
+
+
+// create index text
+db.movies.createIndex({plot: 'text'})
+
+//query it:
+db.movies.find({$text: {$search: 'ship'}})
+
+
+/*
+Result:
+[
+  {
+    "_id": {
+      "$oid": "66806a69f5efb08e3d8515c1"
+    },
+    "name": "Piratas",
+    "year": 2010,
+    "plot": "Pirates steel ships"
+  },
+  {
+    "_id": {
+      "$oid": "66806a69f5efb08e3d8515c0"
+    },
+    "name": "Titanic",
+    "year": 2000,
+    "plot": "A ship that siks at night"
+  }
+]
+*/
