@@ -21,3 +21,39 @@ db.clubs.bulkWrite(
   "upsertedIds": {}
 }
 */
+
+
+// 3 inserts:
+
+db.clubs.bulkWrite(
+    [
+        { insertOne: {name: "Real"} },
+        { insertOne: {name: "Barcelona"} },
+        { insertOne: {name: "Bayern"} }
+    ]
+)
+
+
+/*
+
+{
+  "acknowledged": true,
+  "insertedCount": 3,
+  "insertedIds": {
+    "0": {
+      "$oid": "6681c71e3a1f875a23a899cf"
+    },
+    "1": {
+      "$oid": "6681c71e3a1f875a23a899d0"
+    },
+    "2": {
+      "$oid": "6681c71e3a1f875a23a899d1"
+    }
+  },
+  "matchedCount": 0,
+  "modifiedCount": 0,
+  "deletedCount": 0,
+  "upsertedCount": 0,
+  "upsertedIds": {}
+}
+*/
