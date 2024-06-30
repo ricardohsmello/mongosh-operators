@@ -1,0 +1,14 @@
+db.clubs.findAndModify({
+    query: {name: "Corinthians"},
+    update: { $inc: {titles: 2}},
+    upsert: true, // will insert if one doesn't not exists
+    new: true // retrieve the updated document
+}
+)
+
+db.clubs.findAndModify({
+   query : {name: "Palmeiras"},
+   update: { $set: {worldChampion: false}}
+   // avoid new will return the old document
+}
+)
