@@ -33,7 +33,6 @@ db.clubs.bulkWrite(
     ]
 )
 
-
 /*
 
 {
@@ -57,3 +56,55 @@ db.clubs.bulkWrite(
   "upsertedIds": {}
 }
 */
+
+
+// Insert plus update
+
+db.clubs.bulkWrite(
+    [
+        { insertOne: { name: "Manchester" } }, // Inserting a new club
+        {
+            updateMany: { // setting a new field active for every clubs INCLUDING MANCHESTER
+                filter: {},
+                update: { $set: { active: true } }
+            }
+        }
+    ]
+)
+
+/* Result
+{
+  "acknowledged": true,
+  "insertedCount": 1,
+  "insertedIds": {
+    "0": {
+      "$oid": "6681c7b21570595b2099896e"
+    }
+  },
+  "matchedCount": 6,
+  "modifiedCount": 6,
+  "deletedCount": 0,
+  "upsertedCount": 0,
+  "upsertedIds": {}
+}
+
+*/
+
+//deleteOne
+
+db.clubs.bulkWrite([
+    {
+        deleteOne: {
+            filter: {name: "PSG"}
+        }
+    }
+])
+
+//deleteMany
+db.clubs.bulkWrite([
+    {
+        deleteMany: {
+            filter: {active: true}
+        }
+    }
+])
