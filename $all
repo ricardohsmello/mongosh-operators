@@ -1,0 +1,59 @@
+//All will return an array that satisfy the members at []
+
+/*
+Consider the following scenario:
+
+[
+  {
+    "_id": {
+      "$oid": "654bfc3605b551b69fd514a8"
+    },
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "title": "The Poor Little Rich Girl",
+  },
+  {
+    "_id": {
+      "$oid": "654bfc3605b551b69fd514a9"
+    },
+    "genres": [
+      "Horror",
+      "Science",
+      "Family"
+    ],
+    "title": "The Poor Little Rich Girl",
+  },
+  {
+    "_id": {
+      "$oid": "654bfc3605b551b69fd514aa"
+    },
+    "genres": [
+      "Crime",
+      "Science",
+      "Family"
+    ],
+    "title": "The Poor Little Rich Girl",
+   },
+  {
+    "_id": {
+      "$oid": "654bfc3605b551b69fd514ab"
+    },
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Family"
+    ],
+    "title": "The Poor Little Rich Girl",
+ }
+]
+
+*/
+
+// Query it:
+db.movies.find( { genres: { $all: ["Crime", "Mystery"] } } )
+
+
+//This query above will return just the movie The Poor Little Rich Girl because this document has both Crime and Mistery
