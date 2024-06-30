@@ -1,0 +1,22 @@
+// The $out creates a copy of the collection
+
+//This case, we going to create a new orders collection into a new_database database.
+
+use('my_database');
+db.orders.aggregate([
+    {
+        $out: {
+            db: "new_database",
+            coll: "orders_new"
+        }
+    }
+])
+
+// If we need to just create a copy of the collection in the same database, just:
+
+use('my_database');
+db.orders.aggregate([
+    {
+        $out: "orders_new"
+    }
+])
