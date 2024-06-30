@@ -1,0 +1,13 @@
+//Command
+
+db.restaurants.deleteMany({})
+
+
+/*
+Result
+
+{
+  "acknowledged": true,
+  "deletedCount": 2
+}
+*/
