@@ -1,0 +1,17 @@
+// Updating all articles seting active equal false
+
+db.articles.updateMany({}, { $set: { active: false } })
+
+/*
+
+Result
+
+{
+  "acknowledged": true,
+  "insertedId": null,
+  "matchedCount": 5,
+  "modifiedCount": 4,
+  "upsertedCount": 0
+}
+
+/*
