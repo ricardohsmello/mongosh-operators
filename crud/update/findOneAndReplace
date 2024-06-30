@@ -1,0 +1,9 @@
+// Will return the object before changing
+
+
+db.articles.findOneAndReplace(
+    {_id: ObjectId('6681b9ff8cf75856a29a2bd5')},
+    { fieldOne: "just it"},
+    { upsert: true } // Optional
+    { new: true } // when pass true, it will return the object already changed. Otherwise, will return the old object
+)
