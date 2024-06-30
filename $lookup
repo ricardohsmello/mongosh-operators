@@ -1,0 +1,30 @@
+// Consider the following scenario:
+
+db.articles.insertMany([
+    {title: "Article Ricas", author: "Ricardo", date: new Date("2023-09-15"), published: true},
+    {title: "Joao Article", author: "Joao", date: new Date("2023-09-15"), published: true},
+    {title: "Julia Article", author: "Julia", date: new Date("2023-01-12"), published: false},
+    {title: "Marta Article", author: "Marta", date: new Date("2024-03-25"), published: true},
+    {title: "Joana Article", author: "Joana", date: new Date("2021-04-10"), published: true},
+])
+
+//Creating comments collection:
+db.comments.insertMany([
+    { user: 1, comments: "Very good content", article_id: ObjectId('667e28e032e28185754c0c0b')},
+    { user: 2, comments: "I love Ricardo's article", article_id: ObjectId('667e28e032e28185754c0c0b')},
+    { user: 3, comments: "Amazing", article_id: ObjectId('667e28e032e28185754c0c0b')},
+    { user: 1, comments: "I like the idea behind AI", article_id: ObjectId('667e28e032e28185754c0c0e')},
+    { user: 4, comments: "Awesome, Joao! Love it.", article_id: ObjectId('667e28e032e28185754c0c0c')}
+])
+
+//Querying it:
+db.articles.aggregate([
+    {
+        $lookup: {
+          from: "comments",
+          localField: "_id",
+          foreignField: "article_id",
+          as: "comments from users"
+        }
+    }
+])
