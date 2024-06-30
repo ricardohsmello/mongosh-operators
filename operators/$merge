@@ -1,0 +1,35 @@
+// use to replace a document into a new collection. Stage must be the last in aggregation
+
+
+// this command will generate a new collection in the same database with all documents
+db.articles.aggregate([
+    {
+        $merge: {
+            into: "newArticles"
+        }
+    }
+])
+
+
+// This command will generate all documents in articles and recreate it in newArticles. When matched will replace
+db.articles.aggregate([
+    {
+        $merge: {
+            into: "newArticles",
+            on: "_id",
+            whenMatched: "replace"
+        }
+    }
+])
+
+// This command will replace all documents only if _id matches, otherwise will be discarded
+db.articles.aggregate([
+    {
+        $merge: {
+            into: "newArticles",
+            on: "_id",
+            whenMatched: "replace",
+            whenNotMatched: "discard"
+        }
+    }
+])
