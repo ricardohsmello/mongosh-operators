@@ -1,0 +1,23 @@
+// A simple insert
+db.clubs.bulkWrite(
+    [
+        { insertOne: {name: "Sport Club Corinthians Paulista"} }
+    ]
+)
+
+/* Result:
+{
+  "acknowledged": true,
+  "insertedCount": 1,
+  "insertedIds": {
+    "0": {
+      "$oid": "6681c6bde09a81292e744ad2"
+    }
+  },
+  "matchedCount": 0,
+  "modifiedCount": 0,
+  "deletedCount": 0,
+  "upsertedCount": 0,
+  "upsertedIds": {}
+}
+*/
