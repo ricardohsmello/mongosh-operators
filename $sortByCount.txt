@@ -1,0 +1,17 @@
+/*
+
+The documents are sorted by `count` in descending order.
+
+## $Group + $Sort
+
+`$sortByCount` groups incoming documents based on the value of a specified expression, then computes the count of documents in each distinct group. Each output document contains two fields: an `_id` 
+field containing the distinct grouping value, and  a `count` field containing the number of documents belonging to that grouping or category. 
+The documents are sorted by `count` in **descending** order. The `$sortByCount` stage has the following prototype form:
+*/
+
+
+db.users.aggregate([
+    {
+        $sortByCount: "$city"
+    }
+])
