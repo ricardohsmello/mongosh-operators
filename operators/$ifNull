@@ -1,0 +1,8 @@
+db.person.insertMany([
+    {name: "Ricardo", lastName: "Mello", age: 35, cpf: 123, rg: 44},
+    {name: "John", lastName: "Carmino", age: 31, cpf: 123},
+    {name: "Maria", lastName: "Felipe", age: 14},
+    {name: "My Little cat", lastName: "Palhacito"}
+])
+
+
