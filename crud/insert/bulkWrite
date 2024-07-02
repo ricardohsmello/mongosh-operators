@@ -87,7 +87,6 @@ db.clubs.bulkWrite(
   "upsertedCount": 0,
   "upsertedIds": {}
 }
-
 */
 
 //deleteOne
