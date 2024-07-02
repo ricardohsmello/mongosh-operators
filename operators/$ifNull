@@ -5,7 +5,6 @@ db.person.insertMany([
     {name: "My Little cat", lastName: "Palhacito"}
 ])
 
-
 db.person.aggregate([
     {
         $project: {
