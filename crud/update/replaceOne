@@ -13,7 +13,6 @@ db.articles.replaceOne(
     { upsert: true }
 )
 
-
 /*
 Result
 
