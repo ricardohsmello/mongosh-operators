@@ -6,3 +6,16 @@ db.person.insertMany([
 ])
 
 
+db.person.aggregate([
+    {
+        $project: {
+            _id: 0,
+            name: 1,
+            identification: {
+                $ifNull: [
+                    "$cpf", "$rg", "$lastName", "$Not informed"
+                ]
+            }
+        }
+    }
+])
