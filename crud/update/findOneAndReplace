@@ -1,6 +1,5 @@
 // Will return the object before changing
 
-
 db.articles.findOneAndReplace(
     {_id: ObjectId('6681b9ff8cf75856a29a2bd5')},
     { fieldOne: "just it"},
