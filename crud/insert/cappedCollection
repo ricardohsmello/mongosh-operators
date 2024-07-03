@@ -1,5 +1,6 @@
-// creating a capped collection with max documents equals 2
+// The $out aggregation pipeline stage cannot write results to a capped collection.
 
+// creating a capped collection with max documents equals 2
 db.createCollection(
     "log",
     {
@@ -16,5 +17,10 @@ db.runCommand( { collMod: "log", cappedSize: 5242880 } )
  db.runCommand( { collMod: "log", cappedMax: 3 } )
 
 
-// The $out aggregation pipeline stage cannot write results to a capped collection.
 
+
+// convert a non capped collection into a capped
+db.runCommand( {
+   convertToCapped: "log2",
+   size: 100000
+} )
