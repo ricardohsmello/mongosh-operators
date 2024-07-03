@@ -1,0 +1,10 @@
+// insert items
+db.items.insertMany([
+    {name: "Ventilador"},
+    {name: "Aspirador"},
+    {name: "Alicate"},
+    {name: "Geladeira"},
+])
+
+// Find items terminating by or
+db.items.find({name: {"$regex": /.*or$/}})
