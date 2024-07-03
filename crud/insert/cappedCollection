@@ -1,4 +1,5 @@
 // The $out aggregation pipeline stage cannot write results to a capped collection.
+// Cannot create a TTL index on capped collection
 
 // creating a capped collection with max documents equals 2
 db.createCollection(
