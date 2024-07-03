@@ -9,10 +9,11 @@ db.createCollection(
     }
  )
 
+// changing capped size
+db.runCommand( { collMod: "log", cappedSize: 5242880 } )
 
  // changing max size to 3 documents of capped
-
- db.runCommand( { collMod: "log2", cappedMax: 3 } )
+ db.runCommand( { collMod: "log", cappedMax: 3 } )
 
 
 // The $out aggregation pipeline stage cannot write results to a capped collection.
