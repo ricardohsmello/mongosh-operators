@@ -1,0 +1,14 @@
+// Arrays will order by missing property -> null -> number -> empty string -> String
+
+db.engineers.aggregate([
+    {
+        $project: {
+          team: {
+            $sortArray: {
+                input: "$team",
+                sortBy: { name: 1}
+            }
+          }
+        }
+    }
+])
