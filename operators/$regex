@@ -8,3 +8,7 @@ db.items.insertMany([
 
 // Find items terminating by or
 db.items.find({name: {"$regex": /.*or$/}})
+
+
+// FINDING last name starting with M
+db.artists.find( { "last_name": /^M./ } )
