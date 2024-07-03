@@ -1,0 +1,15 @@
+// creating a view named "myView" from collection "person" with just name field.
+
+db.createView("myView", "person", [
+    {
+        $project: {
+          _id: 0,
+          name: 1
+        }
+    }
+])
+
+
+// drop the view
+
+db.myView.drop()
