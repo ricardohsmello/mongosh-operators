@@ -1,0 +1,4 @@
+//this operators return a sample of documents. In this case, will return 5 documents from accounts
+
+
+db.accounts.aggregate([{$sample: { size: 5}}])
