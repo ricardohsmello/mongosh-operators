@@ -1,0 +1,44 @@
+/* Consider the following products document
+[
+  {
+    "_id": {
+      "$oid": "5f5b0d2f3e3dfbcc11c84444"
+    },
+    "name": "Smartphone",
+    "brand": "Apple",
+    "category": "Electronics",
+    "price": 1000,
+    "discount": 0.1
+  }
+]
+
+
+*/
+// Run updateOne subtracting 1 from price and create a new field "subt"
+db.products.updateOne(
+    {},
+    [
+        {
+            $set: {
+                subt: { $subtract: ["$price", 1] }
+            }
+        }
+    ]
+)
+
+/* Result:
+[
+  {
+    "_id": {
+      "$oid": "5f5b0d2f3e3dfbcc11c84444"
+    },
+    "name": "Smartphone",
+    "brand": "Apple",
+    "category": "Electronics",
+    "price": 1000,
+    "discount": 0.1,
+    "subt": 999
+  }
+]
+
+/*
