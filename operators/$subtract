@@ -42,3 +42,48 @@ db.products.updateOne(
 ]
 
 /*
+
+
+/* New scenario
+[
+  {
+    "_id": 1,
+    "item": "abc",
+    "price": 10,
+    "fee": 2,
+    "discount": 5,
+    "date": {
+      "$date": "2014-03-01T08:00:00Z"
+    }
+  },
+  {
+    "_id": 2,
+    "item": "jkl",
+    "price": 20,
+    "fee": 1,
+    "discount": 2,
+    "date": {
+      "$date": "2014-03-01T09:00:00Z"
+    }
+  }
+]
+
+This query will sum price + fee and subtract discount
+*/
+
+db.sales.aggregate( [ { $project: { item: 1, total: { $subtract: [ { $add: [ "$price", "$fee" ] }, "$discount" ] } } } ] )
+
+/* Result
+[
+  {
+    "_id": 1,
+    "item": "abc",
+    "total": 7
+  },
+  {
+    "_id": 2,
+    "item": "jkl",
+    "total": 19
+  }
+]
+*/
