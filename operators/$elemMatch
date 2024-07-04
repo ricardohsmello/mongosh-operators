@@ -1,0 +1,26 @@
+db.grades.insertMany([
+  {
+    subject: "MongoDB",
+    student: "Ricas",
+    points: [5.1, 7.9, 8.4, 10]
+  },
+  {
+    subject: "MongoDB",
+    student: "Joao",
+    points: [1.0, 0.8, 1.5, 4.6]
+  },
+  {
+    subject: "MongoDB",
+    student: "Maria",
+    points: [4.3, 0.8, 8.5, 9.6]
+  }
+]
+)
+
+
+//will return only studens where exists one item in points that is greater than 9. This case will return Ricas and Maria
+db.grades.find({
+  points: {
+    $elemMatch: {$gt: 9}
+  }
+})
