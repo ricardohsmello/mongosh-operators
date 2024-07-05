@@ -1,0 +1,11 @@
+// used to append some item in array.
+
+Example:
+
+db.articles.insertMany([
+{title: "Beyond Basics JVM", tags: ["Kotlin, "Java", "MongoDB"] },
+{title: "Leveraging MongoDB - Replication", tags: ["MongoDB"] },
+])
+
+
+db.articles.updateOne({title: "Beyond Basics JVM"}, {$addToSet: { tags: {$each: ["Science Computer", "NOSQL"]}  } })
