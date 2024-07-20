@@ -20,7 +20,6 @@ Result
 
 db.articles.deleteOne({}).deletedCount
 
-
 // Collation - In this case, MongoDB will find the world
 
 db.restaurants.deleteOne(

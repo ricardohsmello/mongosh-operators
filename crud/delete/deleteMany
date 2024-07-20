@@ -2,7 +2,6 @@
 
 db.restaurants.deleteMany({})
 
-
 /*
 Result
 

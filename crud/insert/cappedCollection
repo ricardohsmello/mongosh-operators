@@ -18,8 +18,6 @@ db.runCommand( { collMod: "log", cappedSize: 5242880 } )
  db.runCommand( { collMod: "log", cappedMax: 3 } )
 
 
-
-
 // convert a non capped collection into a capped
 db.runCommand( {
    convertToCapped: "log2",

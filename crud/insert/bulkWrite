@@ -22,7 +22,6 @@ db.clubs.bulkWrite(
 }
 */
 
-
 // 3 inserts:
 
 db.clubs.bulkWrite(
