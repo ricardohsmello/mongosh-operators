@@ -7,5 +7,4 @@ db.articles.insertMany([
 {title: "Leveraging MongoDB - Replication", tags: ["MongoDB"] },
 ])
 
-
 db.articles.updateOne({title: "Beyond Basics JVM"}, {$addToSet: { tags: {$each: ["Science Computer", "NOSQL"]}  } })
