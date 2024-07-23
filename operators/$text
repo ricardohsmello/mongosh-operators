@@ -14,7 +14,6 @@ db.movies.createIndex({plot: 'text'})
 //query it:
 db.movies.find({$text: {$search: 'ship'}})
 
-
 /*
 Result:
 [
