@@ -40,9 +40,7 @@ db.products.updateOne(
     "subt": 999
   }
 ]
-
 /*
-
 
 /* New scenario
 [
