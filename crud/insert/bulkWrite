@@ -56,7 +56,6 @@ db.clubs.bulkWrite(
 }
 */
 
-
 // Insert plus update
 
 db.clubs.bulkWrite(
